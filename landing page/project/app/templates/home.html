@@ -1,0 +1,71 @@
+this django landing page
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Link to your CSS file -->
+  </head>
+  <body>
+    <!-- <h1 style="font-size: 100px; color: aquamarine; background-color: black;">i am ansh</h1> -->
+
+    <form id="myForm">
+      <h1 id="formData">Form:</h1>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" />
+
+      <label for="anything">Anything</label>
+      <input type="text" id="anything" name="anything" />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    
+
+    <script>
+      // Initial state of the form
+      let formData = {
+        name: "",
+        email: "",
+        password: "",
+        anything: "",
+      };
+
+      // Function to update formData and display it
+      function handleForm() {
+        formData.name = document.getElementById("name").value;
+        formData.email = document.getElementById("email").value;
+        formData.password = document.getElementById("password").value;
+        formData.anything = document.getElementById("anything").value;
+
+        // Display the form data
+        document.getElementById("formData").textContent =
+          JSON.stringify(formData);
+      }
+
+      // Attach event listeners to inputs
+      document.getElementById("name").addEventListener("input", handleForm);
+      document.getElementById("email").addEventListener("input", handleForm);
+      document.getElementById("password").addEventListener("input", handleForm);
+      document.getElementById("anything").addEventListener("input", handleForm);
+
+      // Handle form submit
+      document.getElementById("myForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        // Do something with the form data
+        console.log(formData);
+      });
+    </script>
+  </body>
+</html>
