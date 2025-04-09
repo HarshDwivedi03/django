@@ -6,6 +6,8 @@ def base(req):
 # Create your views here.
 def about(req):
     return render(req,'about.html')
+def home(req):
+    return render(req,'home.html')
 def contact(req):
     return render(req,'contact.html')
 def services(req):
@@ -14,3 +16,8 @@ def registration(req):
     return render(req,'registration.html')
 def login(req):
     return render(req,'login.html')
+def register(request):
+    print('register page')
+    print(request.method)
+    print(request.POST)
+    print(request.FILES)
