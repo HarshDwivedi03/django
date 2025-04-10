@@ -1,0 +1,8 @@
+{% extands "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet"href="{% static 'css/style.css'%}">
+{% block content %}
+
+<h1 class=""ab>home page</h1>
+{% endblock %}
